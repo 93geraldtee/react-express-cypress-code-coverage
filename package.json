@@ -4,7 +4,7 @@
   "description": "A sample Node and React app used to gather fullstack Code Coverage using Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"  
+    "test": "cypress open"
   },
   "author": "",
   "license": "MIT",
