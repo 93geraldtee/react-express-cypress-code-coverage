@@ -6,17 +6,22 @@ The main objective was to get fullstack code coverage using [Cypress](https://ww
 
 Clone the repo and to start:
 
-`npm install` in the root directory, ./frontend/ folder and ./SimpleExpressBackend/ folder
+`npm install` in the root directory, ./frontend/ folder and ./backend/ folder
 
 In the root directory, instrument the frontend using:
 
 `npx nyc instrument --compact=false frontend/src instrumented`
 
-Instrumentation of the backend is handled with the script: `"start": "nyc --silent node index.js"`
+Instrumentation of the backend is handled with the script: 
 
-In root directory, start the backend server with:
+```
+"start": "nyc --silent node index.js"`
+```
+Make sure nyc is installed as a dev dependency in backend and root directories (if not, cd in backend directory and run `npm install nyc --save-dev`)
 
-`npm run start-b`
+Cd into backend and start server with:
+
+`npm run start`
 
 Open another terminal, cd into frontend and run:
 
@@ -25,6 +30,20 @@ Open another terminal, cd into frontend and run:
 In the root directory, start Cypress:
 
 `npm run test`
+
+In `cypress/integration`, create a `test.spec.js` file and add:
+
+```
+describe('functional test 1', () => {
+    beforeEach(() => {
+        cy.visit('http://localhost:3000')
+    })
+
+    it('click on button', () => {
+        cy.get(<replace this with a selector of a button in quotes>).click()
+    })
+})
+```
 
 Once Cypress is open, click the `test.spec.js` and a simple functional test should run in its built-in browser. A coverage folder should be automatically created and code coverage should be saved in `coverage/lcov-report/index.html`. Open the index.html file in browser and both backend and frontend code coverage should be viewable!
 
@@ -81,7 +100,9 @@ In the root of your project, install the code coverage Cypress plugin. This will
 
 Go to `cypress/support/index.js` and add:
 
-`import '@cypress/code-coverage/support`
+```
+import '@cypress/code-coverage/support'
+```
 
 Go to `cypress/plugins/index.js` file, and register tasks by replacing `module.exports` with:
 
