@@ -1,0 +1,17 @@
+{
+  "name": "node-react-cypress-code-coverage",
+  "version": "1.0.0",
+  "description": "A sample Node and React app used to gather fullstack Code Coverage using Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "start-b": "node backend/index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cypress/code-coverage": "^3.9.9",
+    "cypress": "^7.7.0",
+    "nyc": "^15.1.0"
+  }
+}
