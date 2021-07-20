@@ -17,19 +17,19 @@ Instrumentation of the backend is handled with the script:
 ```
 "start": "nyc --silent node index.js"`
 ```
-Make sure nyc is installed as a dev dependency in backend and root directories (if not, cd in backend directory and run `npm install nyc --save-dev`)
+Make sure nyc is installed as a dev dependency in backend and root directories (if not, run `npm install nyc --save-dev` in backend or root directory)
 
 Cd into backend and start server with:
 
-`npm run start`
+`npm start`
 
 Open another terminal, cd into frontend and run:
 
-`npm run start`
+`npm start`
 
 In the root directory, start Cypress:
 
-`npm run test`
+`npm test`
 
 In `cypress/integration`, create a `test.spec.js` file and add:
 
@@ -45,7 +45,9 @@ describe('functional test 1', () => {
 })
 ```
 
-Once Cypress is open, click the `test.spec.js` and a simple functional test should run in its built-in browser. A coverage folder should be automatically created and code coverage should be saved in `coverage/lcov-report/index.html`. Open the index.html file in browser and both backend and frontend code coverage should be viewable!
+Once Cypress is open, click the `test.spec.js` and a simple functional test should run in its built-in browser. 
+
+A coverage folder should be automatically created and code coverage should be saved in `coverage/lcov-report/index.html`. Open the index.html file in browser and both backend and frontend code coverage should be viewable!
 
 ________________________________________________________________________________
 
