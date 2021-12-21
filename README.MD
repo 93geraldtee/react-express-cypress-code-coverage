@@ -8,6 +8,8 @@ Clone the repo and to start:
 
 `npm install` in the root directory, ./frontend/ folder and ./backend/ folder
 
+    - if "npm ERR! code ELIFECYCLE" is found, delete node_modules folder and package-lock.json folder, then run `npm start` again
+
 In the root directory, instrument the frontend using:
 
 `npx nyc instrument --compact=false frontend/src instrumented`
